@@ -1,0 +1,17 @@
+'''Given an array arr, rotate the array by one position in clockwise direction.
+Examples:
+Input: arr[] = [1, 2, 3, 4, 5]
+Output: [5, 1, 2, 3, 4]
+Explanation: If we rotate arr by one position in clockwise 5 come to the front and
+remaining those are shifted to the end.'''
+
+arr = list(map(int, input("Enter elements: ").split()))
+
+last = arr[-1]
+
+for i in range(len(arr)-1, 0, -1):
+    arr[i] = arr[i-1]
+
+arr[0] = last
+
+print("Rotated array:", arr)
